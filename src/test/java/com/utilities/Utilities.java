@@ -1,6 +1,6 @@
 package com.utilities;
 
-import org.junit.jupiter.api.Test;
+
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
@@ -31,44 +31,4 @@ public class Utilities{
         LinkedHashMap webobjectinfo = (LinkedHashMap) o.get(webobject);
         return(webobjectinfo);
     }
-
-    @Test
-    void test1() throws IOException {
-
-        readORFile();
-        LinkedHashMap login = getORInfo("HomePage","-login");
-        login.get("value");
-        System.out.println(login.get("value"));
-    }
-
 }
-
-
-
-
-
-
-     class Items {
-        public Map<Integer, Item> map;
-    }
-     class Item {
-
-        private int typeID, limit;
-
-        public int getTypeID() {
-            return typeID;
-        }
-
-        public void setTypeID(int typeID) {
-            this.typeID = typeID;
-        }
-
-        public int getLimit() {
-            return limit;
-        }
-
-        public void setLimit(int limit) {
-            this.limit = limit;
-        }
-    }
-

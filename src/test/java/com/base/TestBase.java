@@ -22,7 +22,7 @@ import java.time.Duration;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestBase {
 
-    protected ChromeDriver driver;
+    public static ChromeDriver driver;
     protected final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
     protected final Utilities util = new Utilities();

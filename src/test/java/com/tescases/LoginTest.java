@@ -1,9 +1,11 @@
 package com.tescases;
 
 import com.base.TestBase;
+import com.listeners.TestResultLoggerExtension;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -11,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
+
 import java.util.HashMap;
 import java.util.stream.Stream;
 
@@ -28,6 +30,7 @@ public class LoginTest extends TestBase {
     @MethodSource("loginUsers")
     @Story("User tries to login the system with valid username and valid password.")
     @Description("Valid Login Test with valid Username and valid Password.")
+    @ExtendWith(TestResultLoggerExtension.class)
     void loginAsAdmin(String user, String password, String validation) throws InterruptedException {
         logger.info("Starting Test Login Test");
         HashMap<String,String> login = util.getORInfo("HomePage","-login");
@@ -71,5 +74,6 @@ public class LoginTest extends TestBase {
                 arguments("oscar", "Ogmp.12345os","oscar")
         );
     }
+
 
 }
