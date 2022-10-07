@@ -3,6 +3,14 @@ HomePage:
     locator: linktext
     value: Log in
     type: link
+  -search:
+    locator: css
+    value: .form-search
+    type: textbox
+  -searchButton:
+    locator: xpath
+    value: //*[@id="edit-submit"]
+    type: button
 LoginPage:
   -login_name:
     locator: id
