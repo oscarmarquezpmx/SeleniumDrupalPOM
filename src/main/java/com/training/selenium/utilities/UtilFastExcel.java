@@ -1,4 +1,4 @@
-package com.utilities;
+package com.training.selenium.utilities;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,7 +15,6 @@ import org.dhatim.fastexcel.reader.Cell;
 import org.dhatim.fastexcel.reader.ReadableWorkbook;
 import org.dhatim.fastexcel.reader.Row;
 import org.dhatim.fastexcel.reader.Sheet;
-import org.junit.jupiter.api.Test;
 //import org.junit.jupiter.api.parallel.Resources;
 
 public class UtilFastExcel {

@@ -1,6 +1,6 @@
 package com.training.selenium.listeners;
 
-import com.training.selenium.base.TestBase;
+import com.training.selenium.base.Page;
 import io.qameta.allure.Allure;
 import org.junit.jupiter.api.extension.AfterAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -39,7 +39,7 @@ public class TestResultLoggerExtension implements TestWatcher, AfterAllCallback 
 
     @Override
     public void testFailed(ExtensionContext context, Throwable cause) {
-        Allure.addAttachment("Failure screenshot", new ByteArrayInputStream(((TakesScreenshot) TestBase.driver).getScreenshotAs(OutputType.BYTES)));
+        Allure.addAttachment("Failure screenshot", new ByteArrayInputStream(((TakesScreenshot) Page.driver).getScreenshotAs(OutputType.BYTES)));
         TestWatcher.super.testFailed(context, cause);
     }
 

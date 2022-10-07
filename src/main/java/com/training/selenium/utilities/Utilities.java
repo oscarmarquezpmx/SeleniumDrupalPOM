@@ -1,4 +1,4 @@
-package com.utilities;
+package com.training.selenium.utilities;
 
 
 import org.yaml.snakeyaml.Yaml;

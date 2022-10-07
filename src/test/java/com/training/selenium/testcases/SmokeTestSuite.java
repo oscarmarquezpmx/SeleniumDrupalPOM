@@ -1,4 +1,4 @@
-package com.testcases;
+package com.training.selenium.testcases;
 
 
 import org.junit.platform.suite.api.IncludeTags;

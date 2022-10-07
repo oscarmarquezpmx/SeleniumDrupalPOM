@@ -3,16 +3,40 @@ HomePage:
     locator: linktext
     value: Log in
     type: link
+  -homeLink:
+    locator: css
+    value: ".menu-main__item > .is-active"
+    type: link
+  -articlesLink:
+    locator: css
+    value: ".menu-main__item:nth-child(2) > .menu-main__link"
+    type: link
+  -recipesLink:
+    locator: css
+    value: ".menu-main__item:nth-child(3) > .menu-main__link"
+    type: link
+  -loginLink:
+    locator: css
+    value: ".menu-account__link"
+    type: link
+  -search:
+    locator: css
+    value: .form-search
+    type: textbox
+  -searchButton:
+    locator: xpath
+    value: //*[@id="edit-submit"]
+    type: button
 LoginPage:
-  -login_name:
+  -userTextBox:
     locator: id
     value: edit-name
     type: textbox
-  -login_password:
+  -passwordTextBox:
     locator: id
     value: edit-pass
     type: textbox
-  -login_button:
+  -loginButton:
     locator: name
     value: op
     type: button
