@@ -1,4 +1,4 @@
-package com.training.selenium.utilities;
+package com.training.selenium.tags;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

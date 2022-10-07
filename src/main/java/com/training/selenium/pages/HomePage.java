@@ -1,31 +1,52 @@
-package com.pages;
+package com.training.selenium.pages;
 
+import com.training.selenium.base.Page;
+import com.training.selenium.utilities.Utilities;
+import org.openqa.selenium.WebElement;
+
+import java.io.IOException;
 import java.util.HashMap;
-import com.utilities.Utilities;
 
-public class HomePage {
+public class HomePage extends Page {
 
-        public static void main(String[] args){
-                HomePage hp = new HomePage();
-                hp.goToHome();
-        }
-
-        public void goToHome(){
-   //     	Utilities util = new Utilities();
-   //         HashMap<String, String> login = util.getORInfo("HomePage", "-login");
-
+         //WebDriver driver;
+         Utilities util = new Utilities();
+        public HomePage() throws IOException {
+          //  this.driver = super.driver;
+            util.readORFile();
 
         }
 
-        public void goToArticles(){
+        public void goToHome() throws IOException, InterruptedException {
 
+          HashMap<String, String> homeLink = util.getORInfo("HomePage", "-homeLink");
+          WebElement weHomeLink = findByElement(homeLink.get("locator"), homeLink.get("value"));
+          weHomeLink.click();
+
+        }
+
+        public void goToArticles() throws InterruptedException {
+            HashMap<String, String> articlesLink = util.getORInfo("HomePage", "-articlesLink");
+            WebElement weHomeLink = findByElement(articlesLink.get("locator"), articlesLink.get("value"));
+            weHomeLink.click();
 
         }
 
-        public void goToRecipes(){
-
+        public void goToRecipes() throws InterruptedException {
+            HashMap<String, String> recipesLink = util.getORInfo("HomePage", "-recipesLink");
+            WebElement weHomeLink = findByElement(recipesLink.get("locator"), recipesLink.get("value"));
+            weHomeLink.click();
 
         }
+
+        public void goToLogin() throws InterruptedException {
+            HashMap<String, String> loginLink = util.getORInfo("HomePage", "-loginLink");
+            WebElement weHomeLink = findByElement(loginLink.get("locator"), loginLink.get("value"));
+            weHomeLink.click();
+
+    }
+
+
 
 
 }
