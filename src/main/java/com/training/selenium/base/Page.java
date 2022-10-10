@@ -3,7 +3,9 @@ package com.training.selenium.base;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.core.joran.util.ConfigurationWatchListUtil;
 import com.training.selenium.utilities.Utilities;
-import org.junit.jupiter.api.*;
+//import org.junit.jupiter.api.*;
+//import org.junit.jupiter.api.AfterEach;
+//import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -16,23 +18,23 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.time.Duration;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+//@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 //@Execution(ExecutionMode.CONCURRENT)
 public class Page {
 
     public static ChromeDriver driver;
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
+    private static final  Logger logger = LoggerFactory.getLogger(Page.class);
 
     protected final Utilities util = new Utilities();
 
-    @BeforeEach
-    public void setup() {
+ //   @BeforeEach
+    static public void setup() {
 
-        try {
-            util.readORFile();
-        } catch (IOException e) {
+   //     try {
+   //         util.readORFile();
+  //      } catch (IOException e) {
 
-        }
+   //     }
         System.out.println(System.getProperty("browser"));
         System.out.println(System.getProperty("serverName"));
         System.out.println(System.getProperty("serverPort"));
@@ -52,11 +54,11 @@ public class Page {
         logger.info("Starting Setup  {}", Page.class.getSimpleName());
 
         //ChromeDriver driver;
-        if (browser.equals("chrome")) {
+        if (Constants.browser.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", driversPath + "chromedriver.exe");
             driver = new ChromeDriver();
         }
-        driver.get(serverName + ":" + serverPort);
+        driver.get(Constants.testSiteUrl);
         driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(driverDefaultWait));
     }
@@ -113,8 +115,8 @@ public class Page {
     }
 
 
-    @AfterEach
-    void tearDown() throws InterruptedException {
+ //   @AfterEach
+    static public void tearDown() throws InterruptedException {
         Thread.sleep(4000);
         logger.info("Closing driver");
         driver.close();

@@ -2,12 +2,14 @@ package com.training.selenium.testcases;
 
 import com.training.selenium.base.Page;
 import com.training.selenium.listeners.TestResultLoggerExtension;
+import com.training.selenium.pages.HomePage;
 import com.training.selenium.utilities.UtilFastExcel;
 import io.qameta.allure.*;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -23,6 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Stream;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Epic("Search Tests Epic")
 @Feature("Search Features")
 //@Execution(ExecutionMode.CONCURRENT)
@@ -39,21 +42,14 @@ public class SearchTest extends Page {
     @ExtendWith(TestResultLoggerExtension.class)
     @Step("Test the search feature")
     @Tag("regression")
-    void enterSearchTerm(ArrayList<String> parameters) throws InterruptedException {
- /*       logger.info("Starting Search Test");
+    void enterSearchTerm(ArrayList<String> parameters) throws InterruptedException, IOException {
+        logger.info("Starting Search Test");
+        Page.setup();
+        HomePage home = new HomePage();
 
-        HashMap<String,String> searchTextbox = util.getORInfo("HomePage","-search");
-        HashMap<String,String> searchButton = util.getORInfo("HomePage","-searchButton");
-
-        WebElement weSearchTextbox   = findByElement(searchTextbox.get("locator"),searchTextbox.get("value"));
-        Assertions.assertTrue(weSearchTextbox.isDisplayed());
-        weSearchTextbox.click();
-        WebElement wesearchButton   = findByElement(searchButton.get("locator"),searchButton.get("value"));
-
-        Assertions.assertTrue(wesearchButton.isDisplayed());
-        String searchTerm = parameters.get(0);
-        weSearchTextbox.sendKeys(searchTerm);
-        wesearchButton.click();      */
+        home.doSearch(parameters.get(0));
+        Thread.sleep(1500);
+        Page.tearDown();
 
 //        softly.assertThat(weUserName.getText()).contains("fail");
 //        softly.assertAll();
