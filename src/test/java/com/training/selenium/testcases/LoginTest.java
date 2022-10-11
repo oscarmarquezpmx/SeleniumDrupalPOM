@@ -51,8 +51,7 @@ public class LoginTest extends LoginPage {
 
         Page.setup();
         HomePage home = new HomePage();
-        home.goToLogin();
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage = home.goToLogin();
         loginPage.doLogin(parameters.get(0),parameters.get(1));
         Page.tearDown();
 

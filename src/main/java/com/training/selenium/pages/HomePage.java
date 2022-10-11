@@ -46,10 +46,11 @@ public class HomePage extends Page{
 
         }
 
-        public void goToLogin() throws InterruptedException {
+        public LoginPage goToLogin() throws InterruptedException {
         //    HashMap<String, String> loginLink = util.getORInfo("HomePage", "-loginLink");
         //    WebElement weHomeLink = findByElement(loginLink.get("locator"), loginLink.get("value"));
             homeloc.weLoginLink.click();
+            return new LoginPage();
 
     }
 
