@@ -14,31 +14,10 @@ public class LoginPage extends Page {
 
     }
 
-
-
-    public void enterUserName(String username) {
-        //HashMap<String, String> userTextBox = util.getORInfo("LoginPage", "-userTextBox");
-        //WebElement weUserTextbox = findByElement(userTextBox.get("locator"), userTextBox.get("value"));
+    public void doLogin(String username, String password) {
         loginloc.weUserTextBox.sendKeys(username);
-    }
-
-    public void enterPassword(String password) {
-   //     HashMap<String, String> passwordTextBox = util.getORInfo("LoginPage", "-passwordTextBox");
-  //      WebElement wePasswordTextBox = findByElement(passwordTextBox.get("locator"), passwordTextBox.get("value"));
         loginloc.wePasswordTextBox.sendKeys(password);
-    }
-
-    public void clickOnLogin() {
-        //HashMap<String, String> loginButton = util.getORInfo("LoginPage", "-loginButton");
-        //WebElement weloginButton = findByElement(loginButton.get("locator"), loginButton.get("value"));
         loginloc.weloginButton.click();
-    }
-
-    public void doLogin(String user, String password) {
-        enterUserName(user);
-        enterPassword(password);
-        clickOnLogin();
-
     }
 
 }

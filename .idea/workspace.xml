@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea6ae7cd-04e9-430d-80ee-6f7ca3c631e5" name="Changes" comment="update to page factory">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/export/influxDbData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/export/influxDbData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/export/prometheusData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/export/prometheusData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/export/influxDbData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/export/mail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/export/prometheusData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/plugins/behaviors/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/plugins/packages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/plugins/screen-diff/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/plugins/screen-diff/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/1786a0f7-ced5-41de-8945-d2c7b1ecf178-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/1901d4c6-ed48-4e22-9f79-db2e37a35222-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/21c6d210-e404-4c05-97c6-61f5eac1d49d-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/6dc4e2b5-7f34-4a3a-9e7c-1aa8ad309153-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/75c69ab7-40ad-4ffc-aa4e-956a931ac611-attachment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-results/9a42cf0c-4309-4d95-b5b9-972e4463bdb5-attachment" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
@@ -72,6 +88,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ae721d82-5872-4406-80c1-5b145886dc72" />
+        <option name="url" value="https://github.com/oscarmarquezp1978/SeleniumDrupalPOM.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -95,7 +119,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.SmokeTestSuite">
+  <component name="RunManager" selected="Gradle.LoginTest.loginAsAdmin">
     <configuration name="HomeNavigationTest.HomeTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -242,10 +266,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LoginTest.loginAsAdmin" />
         <item itemvalue="Gradle.SmokeTestSuite" />
         <item itemvalue="Gradle.SearchTest.enterSearchTerm" />
         <item itemvalue="Gradle.SearchTest" />
-        <item itemvalue="Gradle.LoginTest.loginAsAdmin" />
         <item itemvalue="Gradle.HomeNavigationTest.HomeTest" />
       </list>
     </recent_temporary>
@@ -266,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665433665538</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update to page factory">
+      <created>1665439244410</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665439244410</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
