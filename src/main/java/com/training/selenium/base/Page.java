@@ -6,6 +6,8 @@ import com.training.selenium.utilities.Utilities;
 //import org.junit.jupiter.api.*;
 //import org.junit.jupiter.api.AfterEach;
 //import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -26,9 +28,8 @@ public class Page {
     private static final  Logger logger = LoggerFactory.getLogger(Page.class);
 
     protected final Utilities util = new Utilities();
-
- //   @BeforeEach
-    static public void setup() {
+    @BeforeEach
+    public void setup() {
 
    //     try {
    //         util.readORFile();
@@ -63,60 +64,30 @@ public class Page {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(driverDefaultWait));
     }
 
-    protected WebElement findByElement(String locator, String value) throws InterruptedException {
-        WebElement we = null;
-        if (locator.contains("id")) {
-            try {
-                we = driver.findElement(By.id(value));
-            } catch (NoSuchElementException e) {
-                //return false;
-            }
-        }
 
-        if (locator.contains("linktext")) {
-            try {
-                we = driver.findElement(By.linkText(value));
-            } catch (NoSuchElementException e) {
-                //return false;
-            }
-        }
 
-        if (locator.contains("name")) {
-            try {
-                we = driver.findElement(By.name(value));
-            } catch (NoSuchElementException e) {
-                //return false;
-            }
-        }
-
-        if (locator.contains("css")) {
-            try {
-                we = driver.findElement(By.cssSelector(value));
-            } catch (NoSuchElementException e) {
-                //return false;
-            }
-        }
-        if (locator.contains("xpath")) {
-            try {
-                we = driver.findElement(By.xpath(value));
-            } catch (NoSuchElementException e) {
-                //return false;
-            }
-        }
+    public static void highlightElement(WebElement webElement) throws InterruptedException {
 
         //highlight the element
-        String currentColor = we.getCssValue("background-color");
+        String currentColor = webElement.getCssValue("background-color");
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-        jsExecutor.executeScript("arguments[0].style.background='yellow'", we);
+        jsExecutor.executeScript("arguments[0].style.background='yellow'", webElement);
         Thread.sleep(600);
-        jsExecutor.executeScript("arguments[0].style.background= \"" + currentColor + "\"", we);
+        jsExecutor.executeScript("arguments[0].style.background= \"" + currentColor + "\"", webElement);
 
-        return we;
+    }
+    public static void click(WebElement webelement) throws InterruptedException {
+        highlightElement(webelement);
+        webelement.click();
     }
 
+    public static void enterText(WebElement webelement,String text) throws InterruptedException {
+        highlightElement(webelement);
+        webelement.sendKeys(text);
+    }
 
- //   @AfterEach
-    static public void tearDown() throws InterruptedException {
+    @AfterEach
+    public void tearDown() throws InterruptedException {
         Thread.sleep(4000);
         logger.info("Closing driver");
         driver.close();
