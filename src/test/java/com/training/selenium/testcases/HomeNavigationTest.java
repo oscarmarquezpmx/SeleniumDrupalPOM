@@ -38,12 +38,12 @@ public class HomeNavigationTest   {
     @Test
     public void HomeTest() throws IOException, InterruptedException {
         logger.info("Starting Test Login Test");
-        Page.setup();
+        //Page.setup();
         HomePage home = new HomePage();
         home.goToHome();
         home.goToArticles();
         home.goToRecipes();
-        Page.tearDown();
+       // Page.tearDown();
     }
 
 

@@ -44,12 +44,12 @@ public class SearchTest extends Page {
     @Tag("regression")
     void enterSearchTerm(ArrayList<String> parameters) throws InterruptedException, IOException {
         logger.info("Starting Search Test");
-        Page.setup();
+        //Page.setup();
         HomePage home = new HomePage();
 
         home.doSearch(parameters.get(0));
         Thread.sleep(1500);
-        Page.tearDown();
+        //Page.tearDown();
 
 //        softly.assertThat(weUserName.getText()).contains("fail");
 //        softly.assertAll();

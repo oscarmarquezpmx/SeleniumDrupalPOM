@@ -49,11 +49,11 @@ public class LoginTest extends LoginPage {
     void loginAsAdmin(ArrayList<String> parameters) throws InterruptedException, IOException {
         logger.info("Starting Test Login Test");
 
-        Page.setup();
+  //      Page.setup();
         HomePage home = new HomePage();
         LoginPage loginPage = home.goToLogin();
         loginPage.doLogin(parameters.get(0),parameters.get(1));
-        Page.tearDown();
+  //      Page.tearDown();
 
     }
 

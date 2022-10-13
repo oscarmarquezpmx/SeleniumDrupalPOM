@@ -14,10 +14,10 @@ public class LoginPage extends Page {
 
     }
 
-    public void doLogin(String username, String password) {
-        loginloc.weUserTextBox.sendKeys(username);
-        loginloc.wePasswordTextBox.sendKeys(password);
-        loginloc.weloginButton.click();
+    public void doLogin(String username, String password) throws InterruptedException {
+        enterText(loginloc.weUserTextBox,username);
+        enterText(loginloc.wePasswordTextBox,password);
+        click(loginloc.weloginButton);
     }
 
 }
