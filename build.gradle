@@ -85,7 +85,7 @@ test {
     println " secs"
     systemProperties = System.properties
 }
-
+/*
 task generateAllureReport(type: Exec) {
     commandLine 'cmd', '/c', 'allure generate allure-results --clean -o allure-report'
 }
@@ -94,3 +94,4 @@ test.finalizedBy(generateAllureReport)
 task openAllureReport(type: Exec) {
     commandLine 'cmd', '/c', 'allure serve allure-results'
 }
+*/

@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
@@ -53,7 +54,7 @@ public class Page {
 
         //ChromeDriver driver;
         if (browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", driversPath + "chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", driversPath + "chromedriver");
             driver = new ChromeDriver();
         }
         driver.get(serverName + ":" + serverPort);
