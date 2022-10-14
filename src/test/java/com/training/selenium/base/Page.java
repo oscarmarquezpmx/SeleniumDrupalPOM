@@ -6,18 +6,16 @@ import com.training.selenium.utilities.Utilities;
 //import org.junit.jupiter.api.*;
 //import org.junit.jupiter.api.AfterEach;
 //import org.junit.jupiter.api.BeforeEach;
+import io.cucumber.java.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.time.Duration;
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -28,7 +26,10 @@ public class Page {
     private static final  Logger logger = LoggerFactory.getLogger(Page.class);
 
     protected final Utilities util = new Utilities();
+
+
     @BeforeEach
+    @Before
     public void setup() {
 
    //     try {
@@ -43,25 +44,25 @@ public class Page {
         System.out.println(System.getProperty("driverDefaultWait"));
         LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
         System.out.println(ConfigurationWatchListUtil.getConfigurationWatchList(context).getCopyOfFileWatchList().get(0));
-
+/*
         String browser = System.getProperty("browser").replace("'", "");
         String serverName = System.getProperty("serverName").replace("'", "");
         String serverPort = System.getProperty("serverPort").replace("'", "");
         String driversPath = System.getProperty("driversPath").replace("'", "");
         Long driverDefaultWait = Long.parseLong(System.getProperty("driverDefaultWait").replace("'", ""));
 
-
+*/
         //System.out.println("starting logs");
         logger.info("Starting Setup  {}", Page.class.getSimpleName());
 
         //ChromeDriver driver;
         if (Constants.browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", driversPath + "chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "./Webdrivers/chromedriver.exe");
             driver = new ChromeDriver();
         }
         driver.get(Constants.testSiteUrl);
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(driverDefaultWait));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
 

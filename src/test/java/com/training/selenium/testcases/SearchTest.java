@@ -2,11 +2,10 @@ package com.training.selenium.testcases;
 
 import com.training.selenium.base.Page;
 import com.training.selenium.listeners.TestResultLoggerExtension;
-import com.training.selenium.pages.HomePage;
+import com.training.selenium.steps.HomePageSteps;
 import com.training.selenium.utilities.UtilFastExcel;
 import io.qameta.allure.*;
 import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.TestInstance;
@@ -14,14 +13,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -45,7 +42,7 @@ public class SearchTest extends Page {
     void enterSearchTerm(ArrayList<String> parameters) throws InterruptedException, IOException {
         logger.info("Starting Search Test");
         //Page.setup();
-        HomePage home = new HomePage();
+        HomePageSteps home = new HomePageSteps();
 
         home.doSearch(parameters.get(0));
         Thread.sleep(1500);

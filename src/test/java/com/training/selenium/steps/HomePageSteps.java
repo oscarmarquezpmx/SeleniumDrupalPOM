@@ -1,17 +1,27 @@
-package com.training.selenium.pages;
+package com.training.selenium.steps;
 
 import com.training.selenium.base.Page;
-import com.training.selenium.pages.locators.HomePageLocators;
+import com.training.selenium.steps.locators.HomePageLocators;
+import io.cucumber.java.en.Given;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class HomePage extends Page{
+import static com.training.selenium.base.Page.click;
+import static com.training.selenium.base.Page.enterText;
 
+public class HomePageSteps {
+        public ChromeDriver driver;
+        public Page page = new Page();
         public HomePageLocators homeloc;
-        public HomePage() throws IOException {
+
+        public HomePageSteps() throws IOException {
+           // Page page = new Page();
+            page.setup();
+            this.driver = Page.driver;
             this.homeloc = new HomePageLocators();
-            PageFactory.initElements(driver,this.homeloc);
+            PageFactory.initElements(this.driver,this.homeloc);
 
         }
 
@@ -29,10 +39,10 @@ public class HomePage extends Page{
             click(homeloc.weRecipesLink);
 
         }
-
-        public LoginPage goToLogin() throws InterruptedException {
+        @Given("user navigates to login")
+        public void goToLogin() throws InterruptedException, IOException {
             click(homeloc.weLoginLink);
-            return new LoginPage();
+         //   return new LoginPageSteps();
 
     }
 

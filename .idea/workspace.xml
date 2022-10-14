@@ -5,20 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea6ae7cd-04e9-430d-80ee-6f7ca3c631e5" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/Webdrivers/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/cucumber/ReRunCucumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/cucumber/RunCucumberTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/steps/LoginPageSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Login.Feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2022_09_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2022_09_54__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/base/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/training/selenium/base/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/training/selenium/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/training/selenium/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/base/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/base/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/base/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/base/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/steps/HomePageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/pages/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/pages/locators/HomePageLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/steps/locators/HomePageLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/training/selenium/pages/locators/LoginLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/steps/locators/LoginLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/listeners/TestListeners.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/HomeNavigationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/HomeNavigationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/SearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/META-INF/services/org.junit.platform.launcher.TestExecutionListener" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/junit-platform.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/junit-platform.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,36 +118,73 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/oscar/java/SeleniumDrupalFactories",
+    "last_opened_file_path": "C:/Java/SeleniumDrupalCucumberGITHUB/src/test/java/com/training/selenium/cucumber",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.SearchTest">
-    <configuration name="LoginTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.training.selenium.testcases.LoginTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Java\SeleniumDrupalCucumberGITHUB\src\test\java\com\training\selenium\cucumber" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Java\SeleniumDrupalCucumberGITHUB\src\test\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ReRunCucumber">
+    <configuration name="ReRunCucumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.training.selenium.cucumber.ReRunCucumber" />
+      <module name="SeleniumDrupalPOM.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.training.selenium.cucumber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: Login (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
+      <option name="GLUE" value="com.training.selenium.steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="SeleniumDrupalPOM.test" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: Login" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Verify that an Admin can login to Drupal (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
+      <option name="GLUE" value="com.training.selenium.steps" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="SeleniumDrupalPOM.test" />
+      <option name="NAME_FILTER" value="^Verify that an Admin can login to Drupal$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify that an Admin can login to Drupal$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify that an Admin can login to Drupal" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="LoginTest.loginAsAdmin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -163,7 +209,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SearchTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RunCucumberTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -176,30 +222,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.training.selenium.testcases.SearchTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="SearchTest.enterSearchTerm" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.training.selenium.testcases.SearchTest.enterSearchTerm&quot;" />
+            <option value="&quot;com.training.selenium.cucumber.RunCucumberTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -230,44 +253,21 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SmokeTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.training.selenium.testcases.SmokeTestSuite&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Application.ReRunCucumber" />
+      <item itemvalue="Cucumber Java.Feature: Login (1)" />
+      <item itemvalue="Cucumber Java.Scenario: Verify that an Admin can login to Drupal (1)" />
       <item itemvalue="Gradle.SeleniumDrupalPOM [build]" />
-      <item itemvalue="Gradle.LoginTest" />
-      <item itemvalue="Gradle.SearchTest" />
-      <item itemvalue="Gradle.SearchTest.enterSearchTerm" />
-      <item itemvalue="Gradle.SmokeTestSuite" />
+      <item itemvalue="Gradle.RunCucumberTest" />
       <item itemvalue="Gradle.LoginTest.loginAsAdmin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SearchTest" />
+        <item itemvalue="Gradle.RunCucumberTest" />
+        <item itemvalue="Cucumber Java.Feature: Login (1)" />
         <item itemvalue="Gradle.LoginTest.loginAsAdmin" />
-        <item itemvalue="Gradle.LoginTest" />
-        <item itemvalue="Gradle.SmokeTestSuite" />
-        <item itemvalue="Gradle.SearchTest.enterSearchTerm" />
+        <item itemvalue="Cucumber Java.Scenario: Verify that an Admin can login to Drupal (1)" />
+        <item itemvalue="Application.ReRunCucumber" />
       </list>
     </recent_temporary>
   </component>
@@ -316,19 +316,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/training/selenium/utilities/Utilities.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/HomeNavigationTest.java</url>
-          <line>42</line>
+          <line>32</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/SearchTest.java</url>
-          <line>63</line>
+          <line>60</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/steps/LoginPageSteps.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,4 +1,4 @@
-package com.training.selenium.pages.locators;
+package com.training.selenium.steps.locators;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
