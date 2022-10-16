@@ -26,7 +26,7 @@ import java.util.stream.Stream;
 @Epic("Search Tests Epic")
 @Feature("Search Features")
 //@Execution(ExecutionMode.CONCURRENT)
-public class SearchTest extends Page {
+public class SearchTest  {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
     SoftAssertions softly = new SoftAssertions();
 
