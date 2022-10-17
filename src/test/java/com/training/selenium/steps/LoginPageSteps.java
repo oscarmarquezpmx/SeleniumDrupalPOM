@@ -1,12 +1,12 @@
 package com.training.selenium.steps;
 
 import com.training.selenium.base.Page;
-import com.training.selenium.steps.locators.HomePageLocators;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -23,26 +23,23 @@ import static com.training.selenium.base.Page.enterText;
 public class LoginPageSteps {
     private static final Logger logger = LoggerFactory.getLogger(Page.class);
 
-    HomePageSteps home;
     //public static ChromeDriver driver;
     LoginLocators loginloc;
-    ChromeDriver driver;
+    //WebDriver driver;
     //static Page page = new Page();
 
     public LoginPageSteps() throws IOException, InterruptedException {
-        if(driver == null){
-            HomePageSteps home = new HomePageSteps();
-            this.driver = home.driver;
-            home.goToLogin();
-        }
+        HomePageSteps home = new HomePageSteps();
+        //this.driver = home.driver;
+        home.goToLogin();
         this.loginloc = new LoginLocators();
-        PageFactory.initElements(driver,this.loginloc);
+        PageFactory.initElements(Page.driver,this.loginloc);
     }
 
 
 
     @Given("Open Chrome and launch the application")
-    public void startTheTest() throws IOException, InterruptedException {
+    public void startTheTest() throws InterruptedException {
         //page.setup();
       //  HomePageSteps home = new HomePageSteps();
      //   home.goToLogin();
@@ -72,8 +69,8 @@ public class LoginPageSteps {
     public void tearDown() throws InterruptedException {
         Thread.sleep(4000);
         logger.info("Closing driver");
-        driver.close();
-        driver.quit();
+        Page.driver.close();
+        Page.driver.quit();
     }
 
 }

@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea6ae7cd-04e9-430d-80ee-6f7ca3c631e5" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2022_09_54_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2022_09_54__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/SearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/base/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/base/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/steps/HomePageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/steps/HomePageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/steps/LoginPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/steps/LoginPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Login.Feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,20 +119,7 @@
       <recent name="C:\Java\SeleniumDrupalCucumberGITHUB\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RunCucumberTest">
-    <configuration name="ReRunCucumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.training.selenium.cucumber.ReRunCucumber" />
-      <module name="SeleniumDrupalPOM.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.training.selenium.cucumber.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.LoginTest">
     <configuration name="Feature: Login (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
@@ -166,6 +158,29 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="LoginTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.training.selenium.testcases.LoginTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="LoginTest.loginAsAdmin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -235,20 +250,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.ReRunCucumber" />
       <item itemvalue="Cucumber Java.Feature: Login (1)" />
       <item itemvalue="Cucumber Java.Scenario: Verify that an Admin can login to Drupal (1)" />
       <item itemvalue="Gradle.SeleniumDrupalPOM [build]" />
+      <item itemvalue="Gradle.LoginTest" />
       <item itemvalue="Gradle.RunCucumberTest" />
       <item itemvalue="Gradle.LoginTest.loginAsAdmin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RunCucumberTest" />
+        <item itemvalue="Gradle.LoginTest" />
         <item itemvalue="Cucumber Java.Feature: Login (1)" />
-        <item itemvalue="Gradle.LoginTest.loginAsAdmin" />
         <item itemvalue="Cucumber Java.Scenario: Verify that an Admin can login to Drupal (1)" />
-        <item itemvalue="Application.ReRunCucumber" />
+        <item itemvalue="Gradle.RunCucumberTest" />
+        <item itemvalue="Gradle.LoginTest.loginAsAdmin" />
       </list>
     </recent_temporary>
   </component>
@@ -315,12 +330,43 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/steps/LoginPageSteps.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/base/Page.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/testcases/LoginTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/steps/HomePageSteps.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/base/Page.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/base/Page.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/training/selenium/base/Page.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CucumberJavaRunConfigurationType">
+        <watch expression="rootUris" />
+        <watch expression="ResourceFileVisitor" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SeleniumDrupalPOM$LoginTest__1_.ic" NAME="LoginTest (1) Coverage Results" MODIFIED="1665006782040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
