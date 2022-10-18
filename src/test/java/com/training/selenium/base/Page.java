@@ -7,12 +7,13 @@ import io.cucumber.java.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.*;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriverLogLevel;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +25,7 @@ import java.time.Duration;
 //@Execution(ExecutionMode.CONCURRENT)
 public class Page {
 
-    public static WebDriver driver = null;
+    public static WebDriver driver;
     private static final  Logger logger = LoggerFactory.getLogger(Page.class);
 
     protected final Utilities util = new Utilities();
@@ -52,6 +53,7 @@ public class Page {
         String serverPort = System.getProperty("serverPort").replace("'", "");
         String driversPath = System.getProperty("driversPath").replace("'", ""); */
         Long driverDefaultWait = Long.parseLong(System.getProperty("driverDefaultWait").replace("'", ""));
+        String os = System.getProperty("os.name");
 
 
         //System.out.println("starting logs");
@@ -60,19 +62,20 @@ public class Page {
 
         //ChromeDriver driver;
         if (Constants.browser.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "./Webdrivers/chromedriver");
+            if(os.toLowerCase().contains("linux"))
+                System.setProperty("webdriver.chrome.driver", "./Webdrivers/chromedriver");
+            if(os.toLowerCase().contains("windows"))
+                System.setProperty("webdriver.chrome.driver", "./Webdrivers/chromedriver.exe");
             driver = new ChromeDriver();
         }
 
         if (Constants.browser.equals("firefox")) {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.setProfile(new FirefoxProfile());
+           firefoxOptions.setProfile(new FirefoxProfile());
             firefoxOptions.setLogLevel(FirefoxDriverLogLevel.FATAL);
             firefoxOptions.setAcceptInsecureCerts(true);
             firefoxOptions.setLogLevel(FirefoxDriverLogLevel.TRACE);
-            firefoxOptions.setCapability("browserName", "Firefox");
-            firefoxOptions.setCapability("browserVersion", "105.0.3");
-   //         firefoxOptions.setHeadless(true);
+     //         firefoxOptions.setHeadless(true);
             FirefoxProfile profile = new FirefoxProfile();
             profile.setPreference("browser.download.folderList", 1);
             profile.setPreference("browser.download.manager.showWhenStarting", false);
@@ -83,19 +86,26 @@ public class Page {
             profile.setPreference("browser.download.manager.closeWhenDone", true);
             profile.setPreference("browser.download.manager.showAlertOnComplete", false);
             profile.setPreference("browser.download.manager.useWindow", false);
-            // You will need to find the content-type of your app and set it here.
             profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream");
 
 
             firefoxOptions.setProfile(profile);
-            firefoxOptions.setBinary("/usr/bin/firefox");
-            //firefoxOptions.setBinary("/home/oscar/Descargas/firefox/firefox");
-            System.setProperty("webdriver.gecko.driver", "./Webdrivers/geckodriver");
 
-            driver = new FirefoxDriver(firefoxOptions);
+
+            if(os.toLowerCase().contains("linux"))
+            {
+                firefoxOptions.setBinary("/usr/bin/firefox");
+                System.setProperty("webdriver.gecko.driver", "./Webdrivers/geckodriver");
+            }
+            if(os.toLowerCase().contains("windows"))
+            {
+                firefoxOptions.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+                System.setProperty("webdriver.gecko.driver", "./Webdrivers/geckodriver.exe");
+            }
+            this.driver = new FirefoxDriver(firefoxOptions);
         }
-        driver.get(Constants.testSiteUrl);
-        driver.manage().window().maximize();
+        this.driver.get(Constants.testSiteUrl);
+        this.driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(driverDefaultWait));
     }
 
@@ -125,8 +135,8 @@ public class Page {
     public void tearDown() throws InterruptedException {
         Thread.sleep(4000);
         logger.info("Closing driver");
-        driver.close();
-        driver.quit();
+        this.driver.close();
+        this.driver.quit();
     }
 }
 

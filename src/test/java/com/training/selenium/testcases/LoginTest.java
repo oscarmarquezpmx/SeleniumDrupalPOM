@@ -33,7 +33,7 @@ public class LoginTest{
     protected final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
     SoftAssertions softly = new SoftAssertions();
 
-    WebDriver driver;
+    //WebDriver driver;
 
 
     @DisplayName("loginAsAdmin")
