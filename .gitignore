@@ -8,3 +8,5 @@ data
 /build/
 allure-report
 allure-results
+/src/test/resources/META-INF
+/.idea
