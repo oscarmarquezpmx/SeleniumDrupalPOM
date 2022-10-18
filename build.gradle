@@ -48,7 +48,7 @@ configurations {
 }
 
 test {
-    ignoreFailures = true
+   // ignoreFailures = true
     useJUnitPlatform {
 
     }
@@ -56,46 +56,4 @@ test {
     systemProperty("junit.jupiter.execution.parallel.enabled", "true")
     systemProperty("junit.jupiter.execution.parallel.config.strategy", "dynamic")
     systemProperty("junit.jupiter.extensions.autodetection.enabled", "true")
-   // systemProperty 'allure.results.directory', "$buildDir/allure-results"
 }
-
-
-loadProperties()
-
-def loadProperties() {
-    def environment = hasProperty('env') ? env : 'dev'
-    println "Current Environment: " + environment
-
-    def configFile = file('config.groovy')
-    def config = new ConfigSlurper(environment).parse(configFile.toURL())
-    project.ext.config = config
-}
-
-task printProperties {
-    //println "Gradle Properties"
-    //println "logbackconfigurationFile: $config.resources.logback.configurationFile"
-    //println "serverName: $config.serverName"
-}
-test {
-    println "System Properties"
-    print "browser "
-    println System.getProperty("browser") ? System.getProperty("browser") : 'no browser name'
-    print "server  "
-    println System.getProperty("serverName") ? System.getProperty("serverName") : 'no server name'
-  //  println System.getProperty("serverPort") ? System.getProperty("serverPort") : 'no port'
- //   println System.getProperty("driversPath") ? System.getProperty("driversPath") : 'no path to drivers'
-    print "Implicit Wait "
-    print System.getProperty("driverDefaultWait") ? System.getProperty("driverDefaultWait") : 'driver default wait'
-    println " secs"
-    systemProperties = System.properties
-}
-/*
-task generateAllureReport(type: Exec) {
-    commandLine 'cmd', '/c', 'allure generate allure-results --clean -o allure-report'
-}
-test.finalizedBy(generateAllureReport)
-
-task openAllureReport(type: Exec) {
-    commandLine 'cmd', '/c', 'allure serve allure-results'
-}
-*/

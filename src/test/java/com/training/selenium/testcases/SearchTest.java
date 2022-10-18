@@ -1,7 +1,5 @@
 package com.training.selenium.testcases;
 
-import com.training.selenium.base.Page;
-import com.training.selenium.listeners.TestResultLoggerExtension;
 import com.training.selenium.steps.HomePageSteps;
 import com.training.selenium.utilities.UtilFastExcel;
 import io.qameta.allure.*;
@@ -36,7 +34,7 @@ public class SearchTest  {
     @MethodSource("searchData")
     @Story("User tries to search in the search textbox and results are provided")
     @Description("A search term is provided and a list of results are presented")
-    @ExtendWith(TestResultLoggerExtension.class)
+   // @ExtendWith(TestResultLoggerExtension.class)
     @Step("Test the search feature")
     @Tag("regression")
     void enterSearchTerm(ArrayList<String> parameters) throws InterruptedException, IOException {

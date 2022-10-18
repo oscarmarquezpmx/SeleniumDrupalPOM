@@ -1,6 +1,5 @@
 package com.training.selenium.testcases;
 
-import com.training.selenium.listeners.TestResultLoggerExtension;
 import com.training.selenium.steps.HomePageSteps;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
@@ -22,7 +21,7 @@ public class HomeNavigationTest   {
     @DisplayName("Home Navigation")
     @Story("User navigates on HomePage")
     @Description("User Basic Navigation")
-    @ExtendWith(TestResultLoggerExtension.class)
+    //@ExtendWith(TestResultLoggerExtension.class)
     @Step("Test the home page upper links")
     @Tag("regression")
     @Test

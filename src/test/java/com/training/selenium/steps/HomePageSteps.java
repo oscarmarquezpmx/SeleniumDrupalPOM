@@ -18,10 +18,8 @@ public class HomePageSteps {
         public HomePageLocators homeloc;
 
         public HomePageSteps() throws IOException {
-           // Page page = new Page();
             Page page = new Page();
             page.setup();
-            //this.driver = Page.driver;
             this.homeloc = new HomePageLocators();
             PageFactory.initElements(page.driver,this.homeloc);
 

@@ -35,28 +35,13 @@ public class Page {
     @Before
     public void setup() {
 
-   //     try {
-   //         util.readORFile();
-  //      } catch (IOException e) {
 
-   //     }
-        System.out.println(System.getProperty("browser"));
-        System.out.println(System.getProperty("serverName"));
-        System.out.println(System.getProperty("serverPort"));
-        System.out.println(System.getProperty("driverDefaultWait"));
-        System.out.println(System.getProperty("driverDefaultWait"));
         LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
         System.out.println(ConfigurationWatchListUtil.getConfigurationWatchList(context).getCopyOfFileWatchList().get(0));
-/*
-        String browser = System.getProperty("browser").replace("'", "");
-        String serverName = System.getProperty("serverName").replace("'", "");
-        String serverPort = System.getProperty("serverPort").replace("'", "");
-        String driversPath = System.getProperty("driversPath").replace("'", ""); */
-        Long driverDefaultWait = Long.parseLong(System.getProperty("driverDefaultWait").replace("'", ""));
+
         String os = System.getProperty("os.name");
 
 
-        //System.out.println("starting logs");
         logger.info("Starting Setup  {}", Page.class.getSimpleName());
 
 
@@ -74,6 +59,7 @@ public class Page {
            firefoxOptions.setProfile(new FirefoxProfile());
             firefoxOptions.setLogLevel(FirefoxDriverLogLevel.FATAL);
             firefoxOptions.setAcceptInsecureCerts(true);
+            firefoxOptions.setCapability("marionette", true);
             firefoxOptions.setLogLevel(FirefoxDriverLogLevel.TRACE);
      //         firefoxOptions.setHeadless(true);
             FirefoxProfile profile = new FirefoxProfile();
@@ -94,7 +80,7 @@ public class Page {
 
             if(os.toLowerCase().contains("linux"))
             {
-                firefoxOptions.setBinary("/usr/bin/firefox");
+                firefoxOptions.setBinary("/home/oscar/Descargas/firefox/firefox");
                 System.setProperty("webdriver.gecko.driver", "./Webdrivers/geckodriver");
             }
             if(os.toLowerCase().contains("windows"))
@@ -106,7 +92,7 @@ public class Page {
         }
         this.driver.get(Constants.testSiteUrl);
         this.driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(driverDefaultWait));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
 
