@@ -59,8 +59,7 @@ public class Page {
            firefoxOptions.setProfile(new FirefoxProfile());
             firefoxOptions.setLogLevel(FirefoxDriverLogLevel.FATAL);
             firefoxOptions.setAcceptInsecureCerts(true);
-            firefoxOptions.setCapability("marionette", true);
-            firefoxOptions.setLogLevel(FirefoxDriverLogLevel.TRACE);
+     //   firefoxOptions.setLogLevel(FirefoxDriverLogLevel.DEBUG);
      //         firefoxOptions.setHeadless(true);
             FirefoxProfile profile = new FirefoxProfile();
             profile.setPreference("browser.download.folderList", 1);
@@ -80,7 +79,7 @@ public class Page {
 
             if(os.toLowerCase().contains("linux"))
             {
-                firefoxOptions.setBinary("/home/oscar/Descargas/firefox/firefox");
+                //firefoxOptions.setBinary("/home/oscar/Descargas/firefox/firefox");
                 System.setProperty("webdriver.gecko.driver", "./Webdrivers/geckodriver");
             }
             if(os.toLowerCase().contains("windows"))

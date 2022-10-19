@@ -70,7 +70,7 @@ public class LoginPageSteps {
         Thread.sleep(4000);
         logger.info("Closing driver");
         Page.driver.close();
-        Page.driver.quit();
+       // Page.driver.quit();
     }
 
 }
