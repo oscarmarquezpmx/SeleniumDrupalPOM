@@ -30,9 +30,9 @@ name: SonarCloud analysis
 
 on:
   push:
-    branches: [ "SeleniumDrupal" ]
+    branches: [ "SeleniumDrupalCucumber" ]
   pull_request:
-    branches: [ "SeleniumDrupal" ]
+    branches: [ "SeleniumDrupalCucumber" ]
   workflow_dispatch:
 
 permissions:
