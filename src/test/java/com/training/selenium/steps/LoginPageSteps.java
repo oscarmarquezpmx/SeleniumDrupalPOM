@@ -57,6 +57,7 @@ public class LoginPageSteps {
     public void tearDown() throws InterruptedException {
          try {
              driver.quit();
+             driver = null;
          }
          catch(Exception e){
              System.out.println(e);
