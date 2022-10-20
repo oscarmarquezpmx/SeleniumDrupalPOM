@@ -6,8 +6,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -17,34 +15,24 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-import static com.training.selenium.base.Page.click;
-import static com.training.selenium.base.Page.enterText;
+import static com.training.selenium.base.Page.*;
 
 public class LoginPageSteps {
     private static final Logger logger = LoggerFactory.getLogger(Page.class);
-
-    //public static ChromeDriver driver;
     LoginLocators loginloc;
-    //WebDriver driver;
-    //static Page page = new Page();
+    HomePageSteps home;
 
-    public LoginPageSteps() throws IOException, InterruptedException {
-        HomePageSteps home = new HomePageSteps();
-        //this.driver = home.driver;
-        home.goToLogin();
-        this.loginloc = new LoginLocators();
-        PageFactory.initElements(Page.driver,this.loginloc);
+    public LoginPageSteps() throws InterruptedException, IOException {
     }
 
 
 
     @Given("Open Chrome and launch the application")
-    public void startTheTest() throws InterruptedException {
-        //page.setup();
-      //  HomePageSteps home = new HomePageSteps();
-     //   home.goToLogin();
-
-        //LoginPageSteps loginPage = home.goToLogin();
+    public void startTheTest() throws InterruptedException, IOException {
+        home = new HomePageSteps();
+        home.goToLogin();
+        this.loginloc = new LoginLocators();
+        PageFactory.initElements(driver,this.loginloc);
     }
 
 
@@ -67,10 +55,15 @@ public class LoginPageSteps {
 
     @After
     public void tearDown() throws InterruptedException {
-        Thread.sleep(4000);
-        logger.info("Closing driver");
-        Page.driver.close();
-       // Page.driver.quit();
+         try {
+             driver.close();
+             driver.quit();
+             driver = null;
+
+         }
+         catch(Exception e){
+             System.out.println(e);
+         }
     }
 
 }

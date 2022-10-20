@@ -1,7 +1,7 @@
 package com.training.selenium.testcases;
 
 import com.training.selenium.steps.HomePageSteps;
-import io.qameta.allure.*;
+//import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -11,18 +11,18 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-@Epic("Home Navigation")
-@Feature("Navigation")
+//@Epic("Home Navigation")
+//@Feature("Navigation")
 public class HomeNavigationTest   {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
     public HomeNavigationTest() throws IOException {
     }
     @DisplayName("Home Navigation")
-    @Story("User navigates on HomePage")
-    @Description("User Basic Navigation")
+   // @Story("User navigates on HomePage")
+  //  @Description("User Basic Navigation")
     //@ExtendWith(TestResultLoggerExtension.class)
-    @Step("Test the home page upper links")
+   // @Step("Test the home page upper links")
     @Tag("regression")
     @Test
     public void HomeTest() throws IOException, InterruptedException {

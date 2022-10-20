@@ -117,11 +117,18 @@ public class Page {
     }
 
     @AfterEach
-    public void tearDown() throws InterruptedException {
+    public static void tearDown() throws InterruptedException {
         Thread.sleep(4000);
         logger.info("Closing driver");
-        this.driver.close();
-        this.driver.quit();
+        //driver.close();
+        try {
+            driver.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        //driver = null;
     }
 }
 

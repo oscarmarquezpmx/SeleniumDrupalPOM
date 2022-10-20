@@ -2,12 +2,11 @@ package com.training.selenium.testcases;
 
 import com.training.selenium.steps.HomePageSteps;
 import com.training.selenium.utilities.UtilFastExcel;
-import io.qameta.allure.*;
+
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -21,8 +20,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@Epic("Search Tests Epic")
-@Feature("Search Features")
+//@Epic("Search Tests Epic")
+//@Feature("Search Features")
 //@Execution(ExecutionMode.CONCURRENT)
 public class SearchTest  {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
@@ -32,10 +31,10 @@ public class SearchTest  {
     @DisplayName("Search without Authentication")
     @ParameterizedTest
     @MethodSource("searchData")
-    @Story("User tries to search in the search textbox and results are provided")
-    @Description("A search term is provided and a list of results are presented")
+    //@Story("User tries to search in the search textbox and results are provided")
+   // @Description("A search term is provided and a list of results are presented")
    // @ExtendWith(TestResultLoggerExtension.class)
-    @Step("Test the search feature")
+    //@Step("Test the search feature")
     @Tag("regression")
     void enterSearchTerm(ArrayList<String> parameters) throws InterruptedException, IOException {
         logger.info("Starting Search Test");

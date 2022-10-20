@@ -1,12 +1,11 @@
 package com.training.selenium.testcases;
 
+import com.training.selenium.base.Page;
 import com.training.selenium.steps.LoginPageSteps;
 import com.training.selenium.utilities.UtilFastExcel;
-import io.qameta.allure.*;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -22,8 +21,8 @@ import java.util.stream.Stream;
 //import static com.training.selenium.steps.LoginPageSteps.driver;
 
 
-@Epic("Login Tests Epic")
-@Feature("Login Features")
+//@Epic("Login Tests Epic")
+//@Feature("Login Features")
 //@Execution(ExecutionMode.CONCURRENT)
 public class LoginTest{
     protected final Logger logger = LoggerFactory.getLogger(this.getClass().getName());
@@ -35,14 +34,16 @@ public class LoginTest{
     @DisplayName("loginAsAdmin")
     @ParameterizedTest
     @MethodSource("loginData")
-    @Story("User tries to login the system with valid username and valid password.")
-    @Description("Valid Login Test with valid Username and valid Password.")
+ //   @Story("User tries to login the system with valid username and valid password.")
+//    @Description("Valid Login Test with valid Username and valid Password.")
    // @ExtendWith(TestResultLoggerExtension.class)
-    @Step("Test the login page")
+ //   @Step("Test the login page")
     @Tag("regression")
     void loginAsAdmin(ArrayList<String> parameters) throws InterruptedException, IOException {
         logger.info("Starting Test Login Test");
+        //Page page = new Page();
         LoginPageSteps loginPage = new LoginPageSteps();
+        loginPage.startTheTest();
         loginPage.doLogin(parameters.get(0),parameters.get(1));
         loginPage.tearDown();
     }
