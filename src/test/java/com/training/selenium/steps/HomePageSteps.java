@@ -52,12 +52,7 @@ public class HomePageSteps {
 
     }
 
-        public void doSearch(String searchParameter) throws InterruptedException {
-            enterText(homeloc.weSearchTextBox,searchParameter);
-            click(homeloc.weSearchButton);
 
-
-        }
 
 
 

@@ -16,11 +16,7 @@ public class HomePageLocators {
     @FindBy(css = ".menu-account__link")
     public WebElement weLoginLink;
 
-    @FindBy(css = ".form-search")
-    public WebElement weSearchTextBox;
 
-    @FindBy(xpath = "//*[@id=\"edit-submit\"]")
-    public WebElement weSearchButton;
 
 
 }

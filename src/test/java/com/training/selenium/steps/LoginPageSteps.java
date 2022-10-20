@@ -27,7 +27,7 @@ public class LoginPageSteps {
 
 
 
-    @Given("Open Chrome and launch the application")
+    @Given("Open browser and launch the application")
     public void startTheTest() throws InterruptedException, IOException {
         home = new HomePageSteps();
         home.goToLogin();
@@ -56,10 +56,7 @@ public class LoginPageSteps {
     @After
     public void tearDown() throws InterruptedException {
          try {
-             driver.close();
              driver.quit();
-             driver = null;
-
          }
          catch(Exception e){
              System.out.println(e);
