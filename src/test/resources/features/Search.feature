@@ -1,7 +1,7 @@
 Feature: SearchTest
 
   Scenario Outline: Verify that the search is working
-    Given Open Chrome and launch the application and search
+    Given Open browser and launch the application
     When I enter a search value "<term>"
 
     Examples:

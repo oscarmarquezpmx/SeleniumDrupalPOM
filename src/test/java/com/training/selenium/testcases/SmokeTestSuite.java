@@ -7,7 +7,7 @@ import org.junit.platform.suite.api.Suite;
 import org.junit.platform.suite.api.SuiteDisplayName;
 
     @SelectPackages("com.training.selenium.testcases")
-    @IncludeTags("regression")
+    @IncludeTags("smoke")
 //    @SelectClasses(LoginTest.class )
     @Suite
     @SuiteDisplayName("Test Suite")

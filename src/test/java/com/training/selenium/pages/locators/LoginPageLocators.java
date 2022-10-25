@@ -1,9 +1,9 @@
-package com.training.selenium.steps.locators;
+package com.training.selenium.pages.locators;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginLocators {
+public class LoginPageLocators {
     @FindBy(id = "edit-name")
     public WebElement weUserTextBox;
     @FindBy(id = "edit-pass")

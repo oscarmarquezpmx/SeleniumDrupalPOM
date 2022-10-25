@@ -18,7 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.time.Duration;
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -33,7 +32,7 @@ public class Page {
 
     @BeforeEach
     @Before
-    public void setup() {
+    public static void setup() {
 
 
         LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
@@ -56,11 +55,11 @@ public class Page {
 
         if (Constants.browser.equals("firefox")) {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
-           firefoxOptions.setProfile(new FirefoxProfile());
+            firefoxOptions.setProfile(new FirefoxProfile());
             firefoxOptions.setLogLevel(FirefoxDriverLogLevel.FATAL);
             firefoxOptions.setAcceptInsecureCerts(true);
-     //   firefoxOptions.setLogLevel(FirefoxDriverLogLevel.DEBUG);
-     //         firefoxOptions.setHeadless(true);
+     //     firefoxOptions.setLogLevel(FirefoxDriverLogLevel.DEBUG);
+     //     firefoxOptions.setHeadless(true);
             FirefoxProfile profile = new FirefoxProfile();
             profile.setPreference("browser.download.folderList", 1);
             profile.setPreference("browser.download.manager.showWhenStarting", false);
@@ -87,10 +86,10 @@ public class Page {
                 firefoxOptions.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
                 System.setProperty("webdriver.gecko.driver", "./Webdrivers/geckodriver.exe");
             }
-            this.driver = new FirefoxDriver(firefoxOptions);
+            driver = new FirefoxDriver(firefoxOptions);
         }
-        this.driver.get(Constants.testSiteUrl);
-        this.driver.manage().window().maximize();
+        driver.get(Constants.testSiteUrl);
+        driver.manage().window().maximize();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 

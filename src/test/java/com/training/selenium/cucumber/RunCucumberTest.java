@@ -12,12 +12,10 @@ import static org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder.r
 @Suite
 @IncludeEngines("cucumber")
 @SelectDirectories("src/test/resources/features")
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty,html:target/cucumber-reports/Cucumber.html, json:target/cucumber-reports/Cucumber.json, junit:target/cucumber-reports/Cucumber.xml")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.training.selenium.steps")
+
 public class RunCucumberTest {
 
 
 }
-
-//@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.swtestacademy.springbootselenium.cucumber")
-//@ConfigurationParameter(key = Constants.PLUGIN_PUBLISH_QUIET_PROPERTY_NAME, value = "true")

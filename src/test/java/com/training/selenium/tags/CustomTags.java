@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class CustomTags {
     @Target(ElementType.METHOD)
     @Retention(RetentionPolicy.RUNTIME)
-    @Tag("regression")
+    @Tag("smoke")
     @Test
     public @interface Smoke {
     }

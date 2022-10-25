@@ -1,2 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.513"/>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="37.405">
+    <testcase classname="LoginTest" name="Verify that an Admin can login to Drupal" time="8.403">
+        <system-out><![CDATA[Given Open browser and launch the application...............................passed
+When I enter Username as "oscar" and Password as "12345"....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="LoginTest" name="Verify that an Admin can login to Drupal 2" time="6.923">
+        <system-out><![CDATA[Given Open browser and launch the application...............................passed
+When I enter Username as "oscar" and Password as "12345"....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="LoginTest" name="Verify that an Admin can login to Drupal 3" time="6.551">
+        <system-out><![CDATA[Given Open browser and launch the application...............................passed
+When I enter Username as "xsd" and Password as "asdad"......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="SearchTest" name="Verify that the search is working" time="5.267">
+        <system-out><![CDATA[Given Open Chrome and launch the application and search.....................passed
+When I enter a search value "dish"..........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="SearchTest" name="Verify that the search is working 2" time="4.983">
+        <system-out><![CDATA[Given Open Chrome and launch the application and search.....................passed
+When I enter a search value "fish"..........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="SearchTest" name="Verify that the search is working 3" time="5.044">
+        <system-out><![CDATA[Given Open Chrome and launch the application and search.....................passed
+When I enter a search value "chicken".......................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

@@ -1,8 +1,8 @@
 package com.training.selenium.testcases;
 
+import com.training.selenium.base.Page;
+import com.training.selenium.pages.actions.HomePageActions;
 import com.training.selenium.steps.HomePageSteps;
-import com.training.selenium.steps.LoginPageSteps;
-import com.training.selenium.steps.SearchSteps;
 import com.training.selenium.utilities.UtilFastExcel;
 
 import io.cucumber.java.After;
@@ -33,15 +33,16 @@ public class SearchTest  {
     @DisplayName("Search without Authentication")
     @ParameterizedTest
     @MethodSource("searchData")
-    @Tag("regression")
+    @Tag("smoke")
     void enterSearchTerm(ArrayList<String> parameters) throws InterruptedException, IOException {
         logger.info("Starting Search Test");
-        SearchSteps searchPage = new SearchSteps();
-        searchPage.startTheTest();
+        Page.setup();
+        HomePageActions searchPage = new HomePageActions();
 
         searchPage.doSearch(parameters.get(0));
         Thread.sleep(1500);
-        searchPage.tearDown();
+        Page.tearDown();
+//        searchPage.tearDown();
 
 //        softly.assertThat(weUserName.getText()).contains("fail");
 //        softly.assertAll();
