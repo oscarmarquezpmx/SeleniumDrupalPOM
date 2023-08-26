@@ -9,13 +9,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.time.Duration;
+import java.util.Properties;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 //@Execution(ExecutionMode.CONCURRENT)
@@ -27,26 +32,33 @@ public class Page {
     protected final Utilities util = new Utilities();
 
     @BeforeEach
-    public void setup() {
+    public void setup() throws IOException {
 
         try {
             util.readORFile();
         } catch (IOException e) {
 
         }
-        System.out.println(System.getProperty("browser"));
-        System.out.println(System.getProperty("serverName"));
-        System.out.println(System.getProperty("serverPort"));
-        System.out.println(System.getProperty("driverDefaultWait"));
-        System.out.println(System.getProperty("driverDefaultWait"));
+        // set up new properties object
+        // from file "myProperties.txt"
+        FileInputStream propFile = new FileInputStream( System.getProperty("user.dir") + "/gradle.properties");
+        Properties p = new Properties(System.getProperties());
+        p.load(propFile);
+        System.setProperties(p);
+        System.getProperties().list(System.out);
+        System.out.println(System.getProperty("systemProp.browser"));
+        System.out.println(System.getProperty("systemProp.serverName"));
+        System.out.println(System.getProperty("systemProp.serverPort"));
+        System.out.println(System.getProperty("systemProp.driverDefaultWait"));
+        System.out.println(System.getProperty("systemProp.driverDefaultWait"));
         LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
         System.out.println(ConfigurationWatchListUtil.getConfigurationWatchList(context).getCopyOfFileWatchList().get(0));
 
-        String browser = System.getProperty("browser").replace("'", "");
-        String serverName = System.getProperty("serverName").replace("'", "");
-        String serverPort = System.getProperty("serverPort").replace("'", "");
-        String driversPath = System.getProperty("driversPath").replace("'", "");
-        Long driverDefaultWait = Long.parseLong(System.getProperty("driverDefaultWait").replace("'", ""));
+        String browser = System.getProperty("systemProp.browser").replace("'", "");
+        String serverName = System.getProperty("systemProp.serverName").replace("'", "");
+        String serverPort = System.getProperty("systemProp.serverPort").replace("'", "");
+        String driversPath = System.getProperty("systemProp.driversPath").replace("'", "");
+        Long driverDefaultWait = Long.parseLong(System.getProperty("systemProp.driverDefaultWait").replace("'", ""));
 
 
         //System.out.println("starting logs");
@@ -54,8 +66,10 @@ public class Page {
 
         //ChromeDriver driver;
         if (browser.equals("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
             System.setProperty("webdriver.chrome.driver", driversPath + "chromedriver");
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
         }
         driver.get(serverName + ":" + serverPort);
         driver.manage().window().maximize();
